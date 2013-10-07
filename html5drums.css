@@ -1,0 +1,122 @@
+#sounds { display: none; }
+
+#drumkit {
+	padding: 10px;
+border: 3px solid #666;
+background-color: #333;
+border-radius: 2px;
+-webkit-user-select:none;
+}
+
+#drumkit > ul {
+	padding: 0px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#lights {
+	width: 69.5%;
+min-width: 714px;
+}
+
+#lights > li {
+	padding-bottom: 0px;
+}
+
+#lights ul {
+	padding: 0;
+	margin-right: 0;
+}
+
+#tracker {
+	margin-bottom: 10px;
+}
+
+#controls {
+	min-width: 150px;
+	width: 30%;
+	color: #FFF;
+	float:right;
+}
+
+#temposlider {
+	margin-top: 0.5em;
+}
+
+ul.soundrow li {
+	display: inline-block;
+	height: 15px;
+}
+
+ul.soundrow li.header {
+	width: 37%;
+min-width: 125px;
+background-color: #CCC;
+margin: 0.25%;
+margin-right: 2%;
+padding: 0.5%;
+cursor: default;
+}
+
+ul.soundrow li.pip {
+	width: 2%;
+	min-width: 10px;
+	background-color: #555;;
+	padding: 0.5%;
+	margin-right: 0.5%;
+	text-indent: -99999px;
+}
+ul.soundrow li.pip:hover:not(.active){
+	box-shadow: inset 0 0 10px #FFF;
+}
+ul.soundrow li.pip:hover.active{
+	box-shadow: inset 0 0 10px #000;
+}
+ul.soundrow li.active {
+	background-color: #FF0;
+}
+
+ul.soundrow li.col_3,
+ul.soundrow li.col_7,
+ul.soundrow li.col_11 {
+	margin-right: 12px;
+}
+
+#tracker li.active {
+	background-color: #FFA000;
+}
+#tracker li {
+	background-color: lightgray;
+}
+
+button {
+	width: 100%;
+background: whitesmoke;
+border: none;
+padding: 8px;
+}
+button:hover:not([disabled]) {
+	background: lightgray;
+}
+button:active:not([disabled]) {
+	box-shadow: inset 0 0 2px #000;
+}
+
+
+#loadslot {
+	width: 100%;
+	margin-left: 0;
+}
+
+#slottable > tr, #slottable {
+	width: 100%;
+}
+
+#slottable td:not(#p1) {
+	width: 35%;
+	margin-left: 2px;
+}
+#slottable td#p1 {
+	width: 30%;
+}
+
