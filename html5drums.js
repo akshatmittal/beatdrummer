@@ -77,7 +77,7 @@ function shareit() {
 	this.innerText = "loading...";
 	this.disabled = true;
 
-	prompt("Copy this URL and share with your friends!", location.href);
+	prompt("Copy this URL and share with your friends!", "http://akshatmittal.github.io/beatdrummer/"+location.hash);
 
 	this.innerText = "Share!";
 	this.disabled = false;
