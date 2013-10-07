@@ -2,7 +2,13 @@ body {
 	font-family: Century Gothic, Segoe UI, Ubuntu, Arial;
 	background-color: #0481B5;
 }
-
+a {
+	text-decoration:none;
+	color: #0481B5;
+}
+a:hover {
+	border-bottom: 1.5px dotted #0481B5;
+}
 header, footer, section {
 	display: block;
 	margin: 0px 12px;
