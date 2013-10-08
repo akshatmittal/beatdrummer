@@ -48,7 +48,7 @@ function generateURLHash() {
 	if (location.hash != '#' + newhash) location.hash = newhash;
 }
 
-function parseHash() {
+function loadHash() {
 	if (location.hash.length > 0) {
 		var pieces = location.hash.substring(1).split('|');
 		var lights = pieces[0];
@@ -91,7 +91,7 @@ function loadslot(a) {
 		alert("This slot is empty!");
 	} else {
 		location.hash = localStorage['save' + a];
-		parseHash();	
+		loadHash();	
 	}
 }
 function checkslots() {
@@ -108,6 +108,11 @@ function checkslots() {
 function clearslotsi() {
 	localStorage.clear();
 	checkslots();
+}
+function loaddemo(a) {
+	var sou = new Array("#,,..,,..,,..,,....................,................................,...,...,.......................................................,...,...,....,.............,,..........,...................,.,..............................,|80","#.,.,...,...,...,.......,.......,.................................................................................,....,.,..,.,.....,...,.,.....,...................,...,...,....................................................|120", "#................,....,,.....,,,...,,....,,.........................................................,...,...,...,.................................................,...,...,...,,.................................................|120");
+	location.hash = sou[a-1];
+	loadHash();
 }
 $(document).ready(function(){
 	$("audio").each(function(i){
@@ -144,12 +149,12 @@ $(document).ready(function(){
 	});
 
 	$('#clearall').click(clearAll);
-	$('#reload').click(parseHash);
+	$('#reload').click(loadHash);
 	$('#share').click(shareit);
 	$('#crearslots').click(clearslotsi);
  
 	if (location.hash != '') {
-		parseHash();
+		loadHash();
 	}
 	$('#tempovalue').html(curTempo);
 	$('#temposlider').slider({
