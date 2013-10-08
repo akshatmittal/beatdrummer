@@ -514,7 +514,7 @@ a {
 a:hover {
 	border-bottom: 1.5px dotted $prim-color;
 }
-header, footer, section {
+footer, section {
 	display: block;
 	margin: 0px 12px;
 	background-color: $light-grey;
@@ -532,6 +532,8 @@ header h1 {
 	padding: 0;
 	text-align: center;
 	color: #34495e;
+	margin: .5em 0;
+	color: white;
 }
 
 section#content {
@@ -567,15 +569,15 @@ p {
    =DRUMS
    ========================================================================== */
 
+$disabled-color: #bdc3c7;
+$dark-blue: #34495e;
 
 #sounds { display: none; }
 
 #drumkit {
-	padding: 10px;
-border: 3px solid #666;
-background-color: #333;
-border-radius: 2px;
--webkit-user-select:none;
+	background: #34495e;
+	border: none;
+	-webkit-user-select:none;
 }
 
 #drumkit > ul {
@@ -620,30 +622,34 @@ ul.soundrow li {
 
 ul.soundrow li.header {
 	width: 37%;
-min-width: 125px;
-background-color: #CCC;
-margin: 0.25%;
-margin-right: 2%;
-padding: 0.5%;
-cursor: default;
+	min-width: 125px;
+	color: lighten($dark-blue, 30%);
+	border-bottom: thin solid lighten($dark-blue, 3%);
+	margin-right: 2%;
+	padding: .7em .5%;
+	cursor: default;
+	transition: all .1s ease;
+	text-align: right;
+
+	&:hover {
+		background: darken($dark-blue, 10%);
+	}
 }
 
 ul.soundrow li.pip {
 	width: 2%;
 	min-width: 10px;
-	background-color: #555;;
+	background-color: darken($dark-blue, 7%);
 	padding: 0.5%;
 	margin-right: 0.5%;
 	text-indent: -99999px;
+	transition: all .1s ease;
 }
-ul.soundrow li.pip:hover:not(.active){
-	box-shadow: inset 0 0 10px #FFF;
-}
-ul.soundrow li.pip:hover.active{
-	box-shadow: inset 0 0 10px #000;
+ul.soundrow:not(#tracker) li.pip:hover{
+	background: #1abc9c;
 }
 ul.soundrow li.active {
-	background-color: #FF0;
+	background-color: #2ecc71;
 }
 
 ul.soundrow li.col_3,
@@ -652,24 +658,35 @@ ul.soundrow li.col_11 {
 	margin-right: 12px;
 }
 
+#tracker .pip {
+	background: lighten($dark-blue, 5%);
+	&:hover {
+		background: lighten($dark-blue, 5%);
+	}
+}
+
 #tracker li.active {
-	background-color: #FFA000;
+	background-color: #2ecc71;
 }
 #tracker li {
-	background-color: lightgray;
+	background-color: none;
+	color: lighten($dark-blue, 20%);
+
+	&:hover {
+		background: none;
+	}
 }
 
 button {
 	width: 100%;
-background: whitesmoke;
+background: #2ecc71;
+color: white;
 border: none;
-padding: 8px;
+padding: 10px;
+margin-bottom: 5px;
 }
 button:hover:not([disabled]) {
-	background: lightgray;
-}
-button:active:not([disabled]) {
-	box-shadow: inset 0 0 2px #000;
+	background: #27ae60;
 }
 #loadslot, #buttable, #loadtable {
 	width: 100%;
@@ -678,6 +695,15 @@ button:active:not([disabled]) {
 
 #slottable > tr, #slottable, #buttable > tr, #buttable, #loadtable > tr, #loadtable {
 	width: 100%;
+}
+
+.slottable-title {
+	margin-top: 20px;
+	display: block;
+}
+
+#loadtable {
+	margin-top: 15px;
 }
 
 #slottable td:not(#p1) {
@@ -689,4 +715,11 @@ button:active:not([disabled]) {
 }
 #demoslot {
 	width: 100%;
+}
+
+#share {
+	margin: 5px 0 15px;
+	background: #3498db;
+	font-size: 16px;
+	padding: 15px 10px;
 }
