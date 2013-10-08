@@ -499,30 +499,39 @@ table {
    =STYLE
    ========================================================================== */
 
+$prim-color: #3498db;
+$light-grey: #ecf0f1;
+
+
 body {
-	font-family: Century Gothic, Segoe UI, Ubuntu, Arial;
-	background-color: #0481B5;
+	font-family: Segoe UI, Ubuntu, Arial;
+	background-color: $prim-color;
 }
 a {
 	text-decoration:none;
-	color: #0481B5;
+	color: $prim-color;
 }
 a:hover {
-	border-bottom: 1.5px dotted #0481B5;
+	border-bottom: 1.5px dotted $prim-color;
 }
 header, footer, section {
 	display: block;
 	margin: 0px 12px;
-	background-color: #FFF;
+	background-color: $light-grey;
+	border: thin solid darken($prim-color, 5%);
+	border-top: none;
+	border-bottom-width: 2px;
 	padding: 1em;
 	margin-bottom: 1em;
 }
 
 header h1 {
 	font-size: 3em;
-margin: 0;
-padding: 0;
-text-align: center;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #34495e;
 }
 
 section#content {
@@ -557,6 +566,7 @@ p {
 /* ==========================================================================
    =DRUMS
    ========================================================================== */
+
 
 #sounds { display: none; }
 
