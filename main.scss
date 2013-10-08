@@ -644,7 +644,13 @@ ul.soundrow li.pip {
 	margin-right: 0.5%;
 	text-indent: -99999px;
 	transition: all .1s ease;
+	cursor: pointer;
 }
+
+#tracker li.pip {
+	cursor: default;
+}
+
 ul.soundrow:not(#tracker) li.pip:hover{
 	background: #1abc9c;
 }
@@ -684,6 +690,7 @@ color: white;
 border: none;
 padding: 10px;
 margin-bottom: 5px;
+cursor: pointer;
 }
 button:hover:not([disabled]) {
 	background: #27ae60;
