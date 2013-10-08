@@ -532,7 +532,7 @@ header h1 {
 	padding: 0;
 	text-align: center;
 	color: #34495e;
-	margin: .5em 0;
+	margin: .5em 0 .75em;
 	color: white;
 }
 
@@ -572,9 +572,16 @@ p {
 $disabled-color: #bdc3c7;
 $dark-blue: #34495e;
 
+#content {
+	padding: 0;
+	border: none;
+	background: none;
+}
+
 #sounds { display: none; }
 
 #drumkit {
+	margin: 0;
 	background: #34495e;
 	border: none;
 	-webkit-user-select:none;
