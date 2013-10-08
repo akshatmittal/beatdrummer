@@ -22,7 +22,7 @@
 		<link type="text/css" rel="stylesheet" href="reset.css" />
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<link type="text/css" rel="stylesheet" href="jquery-ui.css" />
-		<link type="text/css" rel="stylesheet" href="html5drums.css" />
+		<link type="text/css" rel="stylesheet" href="drums.css" />
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.7.3/jquery-ui.min.js"></script>
 		<!-- for IE-ish -->
@@ -62,11 +62,15 @@
 						<tr><td id="p1"><span class="slotstatu" id="slot3">3. empty</span></td><td><button id="loadslot" class="saveslot" onclick="saveslot(3)">Save</button></td><td><button id="loadslot3" class="loadslot" onclick="loadslot(3)">Load</button></td></tr>
 						<tr><td colspan="3"><button id="crearslots">Clear all slots!</button></td></tr>
 					</table>
+					<table id="slottable">
+						<tr><td><button id="demoslot" onclick="loaddemo(1)">Sample 1</button></td><td><td><button id="demoslot" onclick="loaddemo(2)">Sample 1</button></td><td><td><button id="demoslot" onclick="loaddemo(3)">Sample 1</button></td><td></tr>
+					</table>
 				</ul> <!-- #controls -->
 			</section><!-- #drumkit -->
 			
 		</section> <!-- #content -->
 		<section id="sounds">
+			<!-- I have comented out all MP3 ones because they have a high network footprint of 2.5 Megabyte. -->
 <audio id="sound_bass_hit" title="Bass Hit" autobuffer preload="true">
 	<!-- <source src="sounds/Bass Hit.wav" type="audio/x-wav"> -->
 	<source src="sounds/Bass Hit.ogg" type="application/ogg">
@@ -148,7 +152,7 @@
 <center><h6><a href="//twitter.com/itsreallyakshat">Akshat Mittal</a></h6><br><small>6 Oct 2013, v0.1 r2 github<br>GitHub: <a href="http://github.com/akshatmittal/beatdrummer">http://github.com/akshatmittal/beatdrummer</a></small></center>
 </footer>
 		
-		<script type="text/javascript" src="html5drums.js"></script>
+		<script type="text/javascript" src="drums.js"></script>
 		
 	</body>
 </html>

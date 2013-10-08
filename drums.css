@@ -119,4 +119,6 @@ button:active:not([disabled]) {
 #slottable td#p1 {
 	width: 30%;
 }
-
+#demoslot {
+	width: 33.32%;
+}
