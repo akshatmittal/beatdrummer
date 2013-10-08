@@ -65,6 +65,7 @@ function loadHash() {
 			$('#tempovalue').innerHTML = pieces[1];
 			curTempo = parseInt(pieces[1]);
 		}
+		$('#tempovalue').html(curTempo);
 		if (isPlaying !== false) {
 			clearInterval(isPlaying);
 			isPlaying = setInterval(playNextBeat, 60000 / curTempo / 4);
