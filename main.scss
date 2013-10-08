@@ -1,0 +1,256 @@
+/**
+ * Made by Namanyay Goel
+ * http://namanyayg.com/ | @namanyayg
+ * 
+ * And Akshat Mittal
+ * For BeatDrummer
+ */
+
+/* ==========================================================================
+   =RESET
+   ========================================================================== */
+
+/* Eric Meyer's reset.css, available at http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+/* ==========================================================================
+   =STYLE
+   ========================================================================== */
+
+body {
+	font-family: Century Gothic, Segoe UI, Ubuntu, Arial;
+	background-color: #0481B5;
+}
+a {
+	text-decoration:none;
+	color: #0481B5;
+}
+a:hover {
+	border-bottom: 1.5px dotted #0481B5;
+}
+header, footer, section {
+	display: block;
+	margin: 0px 12px;
+	background-color: #FFF;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+header h1 {
+	font-size: 3em;
+margin: 0;
+padding: 0;
+text-align: center;
+}
+
+section#content {
+	overflow: hidden;
+}
+
+footer {
+	clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	padding-bottom: 0.5em;
+}
+
+ul {
+	padding-left: 1em;
+}
+
+li {
+	padding-bottom: 0.5em;
+}
+
+p {
+	padding-bottom: 0.5em;
+}
+
+
+
+
+
+
+/* ==========================================================================
+   =DRUMS
+   ========================================================================== */
+
+#sounds { display: none; }
+
+#drumkit {
+	padding: 10px;
+border: 3px solid #666;
+background-color: #333;
+border-radius: 2px;
+-webkit-user-select:none;
+}
+
+#drumkit > ul {
+	padding: 0px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#lights {
+	width: 69.5%;
+min-width: 714px;
+}
+
+#lights > li {
+	padding-bottom: 0px;
+}
+
+#lights ul {
+	padding: 0;
+	margin-right: 0;
+}
+
+#tracker {
+	margin-bottom: 10px;
+}
+
+#controls {
+	min-width: 150px;
+	width: 30%;
+	color: #FFF;
+	float:right;
+}
+
+#temposlider {
+	margin-top: 0.5em;
+}
+
+ul.soundrow li {
+	display: inline-block;
+	height: 15px;
+}
+
+ul.soundrow li.header {
+	width: 37%;
+min-width: 125px;
+background-color: #CCC;
+margin: 0.25%;
+margin-right: 2%;
+padding: 0.5%;
+cursor: default;
+}
+
+ul.soundrow li.pip {
+	width: 2%;
+	min-width: 10px;
+	background-color: #555;;
+	padding: 0.5%;
+	margin-right: 0.5%;
+	text-indent: -99999px;
+}
+ul.soundrow li.pip:hover:not(.active){
+	box-shadow: inset 0 0 10px #FFF;
+}
+ul.soundrow li.pip:hover.active{
+	box-shadow: inset 0 0 10px #000;
+}
+ul.soundrow li.active {
+	background-color: #FF0;
+}
+
+ul.soundrow li.col_3,
+ul.soundrow li.col_7,
+ul.soundrow li.col_11 {
+	margin-right: 12px;
+}
+
+#tracker li.active {
+	background-color: #FFA000;
+}
+#tracker li {
+	background-color: lightgray;
+}
+
+button {
+	width: 100%;
+background: whitesmoke;
+border: none;
+padding: 8px;
+}
+button:hover:not([disabled]) {
+	background: lightgray;
+}
+button:active:not([disabled]) {
+	box-shadow: inset 0 0 2px #000;
+}
+#loadslot, #buttable, #loadtable {
+	width: 100%;
+	margin-left: 0;
+}
+
+#slottable > tr, #slottable, #buttable > tr, #buttable, #loadtable > tr, #loadtable {
+	width: 100%;
+}
+
+#slottable td:not(#p1) {
+	width: 35%;
+	margin-left: 2px;
+}
+#slottable td#p1 {
+	width: 30%;
+}
+#demoslot {
+	width: 100%;
+}
