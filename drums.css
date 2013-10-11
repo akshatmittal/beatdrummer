@@ -58,7 +58,7 @@ padding: 0.5%;
 cursor: default;
 }
 
-ul.soundrow li.pip {
+ul.soundrow li.pox {
 	width: 2%;
 	min-width: 10px;
 	background-color: #555;;
@@ -66,10 +66,10 @@ ul.soundrow li.pip {
 	margin-right: 0.5%;
 	text-indent: -99999px;
 }
-ul.soundrow li.pip:hover:not(.active){
+ul.soundrow li.pox:hover:not(.active){
 	box-shadow: inset 0 0 10px #FFF;
 }
-ul.soundrow li.pip:hover.active{
+ul.soundrow li.pox:hover.active{
 	box-shadow: inset 0 0 10px #000;
 }
 ul.soundrow li.active {
