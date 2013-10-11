@@ -90,7 +90,6 @@ function shareit() {
 		mainelm.disabled = false;
 		$("#share")[0].click();
 	}
-	
 }
 function saveslot(a) {
 	localStorage['save'+a] = location.hash;
