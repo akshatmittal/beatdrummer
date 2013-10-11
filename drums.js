@@ -49,6 +49,7 @@ function generateURLHash() {
 }
 
 function loadHash() {
+	location.hash = decodeURIComponent(location.hash);
 	if (location.hash.length > 0) {
 		var pieces = location.hash.substring(1).split('|');
 		var lights = pieces[0];
@@ -82,6 +83,7 @@ function shareit() {
 	mainelm = this;
 	mainelm.innerText = "loading...";
 	mainelm.disabled = true;
+	var url = "http://akshatmittal.github.io/beatdrummer/" + location.hash;
 	$.getJSON("http://slinkme.ml/api.php?url=" + encodeURIComponent(url), function(d) {
 		prompt("Copy this URL and share with your friends!", "http://koko.ga/"+d.alias);
 		mainelm.innerText = "Share!";
