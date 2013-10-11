@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>The Beat Drummer</title>
+		<!-- Meta . Added later -->
+		<!-- for Google -->
+		<meta name="description" content="A simple beat-box like thing, a board to select/place sounds and play them back. Built in HTML5." />
+		<meta name="author" content="Akshat Mittal" />
+		<meta name="copyright" content="Akshat Mittal" />
+		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+		<!-- for Facebook -->          
+		<meta property="og:title" content="The Beat Drummer" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="http://akshatmittal.github.io/beatdrummer/" />
+		<meta property="og:description" content="A simple beat-box like thing, a board to select/place sounds and play them back. Built in HTML5." />
+		<!-- for Twitter -->          
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="The Beat Drummer" />
+		<meta name="twitter:description" content="A simple beat-box like thing, a board to select/place sounds and play them back. Built in HTML5." />
+		<!-- end Meta -->
+		<link type="text/css" rel="stylesheet" href="reset.css" />
+		<link type="text/css" rel="stylesheet" href="style.css" />
+		<link type="text/css" rel="stylesheet" href="jquery-ui.css" />
+		<link type="text/css" rel="stylesheet" href="drums.css" />
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.7.3/jquery-ui.min.js"></script>
+		<!-- for IE-ish -->
+		<script src="html5.js" type="text/javascript"></script>		
+	</head>
+	<body>
+		<header>
+			<h1>The Beat Drummer</h1>
+		</header>
+		<section id="sorry" style="display:none;color:red;">
+			<center>Sorry, but you need a higher resolution screen to use this. (At least 1000px wide, currently: <span id="screenwide">0</span>px)<br>
+				I have tried to scale it according to your screen but it may not be good enough to use it.
+			</center>
+		</section>
+		<section id="content">
+			<section id="drumkit">
+				<ul id="lights">
+					<li>
+						<ul id="tracker" class="soundrow">
+							<li class="header">Tracker</li><li class="pox col_0">tracker_0</li><li class="pox col_1">tracker_1</li><li class="pox col_2">tracker_2</li><li class="pox col_3">tracker_3</li><li class="pox col_4">tracker_4</li><li class="pox col_5">tracker_5</li><li class="pox col_6">tracker_6</li><li class="pox col_7">tracker_7</li><li class="pox col_8">tracker_8</li><li class="pox col_9">tracker_9</li><li class="pox col_10">tracker_0</li><li class="pox col_11">tracker_1</li><li class="pox col_12">tracker_2</li><li class="pox col_13">tracker_3</li><li class="pox col_14">tracker_4</li><li class="pox col_15">tracker_5</li>
+						</ul>
+					</li>
+				</ul> <!-- #lights -->
+				<ul id="controls">
+					<table id="buttable">
+						<tr>
+							<td><button id="soundstart">Start!</button></td>
+							<td><button id="clearall">Clear!</button></td>
+						</tr>
+					</table>
+					<li><button id="reload">Reload! (from URL)</button></li>
+					<li><button id="share">Share!</button></li>
+					<li>
+						<label>Tempo: <span id="tempovalue"></span> <abbr title="Beats per minute">BPM</abbr></label>
+						<div id="temposlider"></div>
+					</li>
+					<li>Save Slots:</li>
+					<table id="slottable">
+						<tr><td id="p1"><span class="slotstatu" id="slot1">1. empty</span></td><td><button id="loadslot" class="saveslot" onclick="saveslot(1)">Save</button></td><td><button id="loadslot1" class="loadslot" onclick="loadslot(1)">Load</button></td></tr>
+						<tr><td id="p1"><span class="slotstatu" id="slot2">2. empty</span></td><td><button id="loadslot" class="saveslot" onclick="saveslot(2)">Save</button></td><td><button id="loadslot2" class="loadslot" onclick="loadslot(2)">Load</button></td></tr>
+						<tr><td id="p1"><span class="slotstatu" id="slot3">3. empty</span></td><td><button id="loadslot" class="saveslot" onclick="saveslot(3)">Save</button></td><td><button id="loadslot3" class="loadslot" onclick="loadslot(3)">Load</button></td></tr>
+						<tr><td colspan="3"><button id="crearslots">Clear all slots!</button></td></tr>
+					</table>
+					<table id="loadtable">
+						<tr><td><button id="demoslot" onclick="loaddemo(1)">Sample 1</button></td><td><button id="demoslot" onclick="loaddemo(2)">Sample 2</button></td><td><button id="demoslot" onclick="loaddemo(3)">Sample 3</button></td></tr>
+					</table>
+				</ul> <!-- #controls -->
+			</section><!-- #drumkit -->
+			
+		</section> <!-- #content -->
+		<section id="sounds">
+			<!-- I have comented out all MP3 ones because they have a high network footprint of 2.5 Megabyte. -->
+<audio id="sound_bass_hit" title="Bass Hit" autobuffer preload="true">
+	<!-- <source src="sounds/Bass Hit.wav" type="audio/x-wav"> -->
+	<source src="sounds/Bass Hit.ogg" type="application/ogg">
+	<source src="sounds/Bass Hit.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_clap" title="Clap" autobuffer preload="true">
+	<!-- <source src="sounds/Clap.wav" type="audio/x-wav"> -->
+	<source src="sounds/Clap.ogg" type="application/ogg">
+	<source src="sounds/Clap.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_cow_bell" title="Cow Bell" autobuffer preload="true">
+	<!-- <source src="sounds/Cow Bell.wav" type="audio/x-wav"> -->
+	<source src="sounds/Cow Bell.ogg" type="application/ogg">
+	<source src="sounds/Cow Bell.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_crash_cymbal" title="Crash Cymbal" autobuffer preload="true">
+	<!-- <source src="sounds/Crash Cymbal.wav" type="audio/x-wav"> -->
+	<source src="sounds/Crash Cymbal.ogg" type="application/ogg">
+	<source src="sounds/Crash Cymbal.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_hi_hat_closed" title="Hi Hat Closed" autobuffer preload="true">
+	<!-- <source src="sounds/Hi Hat Closed.wav" type="audio/x-wav"> -->
+	<source src="sounds/Hi Hat Closed.ogg" type="application/ogg">
+	<source src="sounds/Hi Hat Closed.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_hi_hat_long" title="Hi Hat Long" autobuffer preload="true">
+	<!-- <source src="sounds/Hi Hat Long.wav" type="audio/x-wav"> -->
+	<source src="sounds/Hi Hat Long.ogg" type="application/ogg">
+	<source src="sounds/Hi Hat Long.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_hi_hat_short" title="Hi Hat Short" autobuffer preload="true">
+	<!-- <source src="sounds/Hi Hat Short.wav" type="audio/x-wav"> -->
+	<source src="sounds/Hi Hat Short.ogg" type="application/ogg">
+	<source src="sounds/Hi Hat Short.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_rimshot" title="Rimshot" autobuffer preload="true">
+	<!-- <source src="sounds/Rimshot.wav" type="audio/x-wav"> -->
+	<source src="sounds/Rimshot.ogg" type="application/ogg">
+	<source src="sounds/Rimshot.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_snare_1" title="Snare 1" autobuffer preload="true">
+	<!-- <source src="sounds/Snare 1.wav" type="audio/x-wav"> -->
+	<source src="sounds/Snare 1.ogg" type="application/ogg">
+	<source src="sounds/Snare 1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_snare_2" title="Snare 2" autobuffer preload="true">
+	<!-- <source src="sounds/Snare 2.wav" type="audio/x-wav"> -->
+	<source src="sounds/Snare 2.ogg" type="application/ogg">
+	<source src="sounds/Snare 2.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_tambourine" title="Tambourine" autobuffer preload="true">
+	<!-- <source src="sounds/Tambourine.wav" type="audio/x-wav"> -->
+	<source src="sounds/Tambourine.ogg" type="application/ogg">
+	<source src="sounds/Tambourine.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_tom_hi" title="Tom Hi" autobuffer preload="true">
+	<!-- <source src="sounds/Tom Hi.wav" type="audio/x-wav"> -->
+	<source src="sounds/Tom Hi.ogg" type="application/ogg">
+	<source src="sounds/Tom Hi.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_tom_low" title="Tom Low" autobuffer preload="true">
+	<!-- <source src="sounds/Tom Low.wav" type="audio/x-wav"> -->
+	<source src="sounds/Tom Low.ogg" type="application/ogg">
+	<source src="sounds/Tom Low.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound_tom_mid" title="Tom Mid" autobuffer preload="true">
+	<!-- <source src="sounds/Tom Mid.wav" type="audio/x-wav"> -->
+	<source src="sounds/Tom Mid.ogg" type="application/ogg">
+	<source src="sounds/Tom Mid.mp3" type="audio/mpeg">
+</audio>
+</section>
+<section><center>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/BeatDrummer" data-text="The Beat Drummer" data-via="itsreallyakshat" data-size="large" data-related="itsreallyakshat">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fakshatmittal.github.io%2Fbeatdrummer%2F&amp;width=200&amp;height=26&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=false&amp;appId=367581389983871" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:26px;" allowTransparency="true"></iframe>
+<div class="g-plusone" data-annotation="inline" data-width="250" data-href="http://akshatmittal.github.io/beatdrummer/"></div>
+</center></section> 
+<footer>
+<center><h6><a href="//twitter.com/itsreallyakshat">Akshat Mittal</a></h6><br><small>6 Oct 2013, v0.1 r3 github<br>GitHub: <a href="http://github.com/akshatmittal/beatdrummer" target="_blank">http://github.com/akshatmittal/beatdrummer</a></small></center>
+</footer>
+		
+		<script type="text/javascript" src="drums.js"></script>
+		
+	</body>
+</html>
