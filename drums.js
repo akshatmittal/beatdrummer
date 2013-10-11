@@ -79,13 +79,18 @@ function clearAll() {
 }
 function shareit() {
 	console.log(new Date().getTime());
-	this.innerText = "loading...";
-	this.disabled = true;
-
-	prompt("Copy this URL and share with your friends!", "http://akshatmittal.github.io/beatdrummer/"+location.hash);
-
-	this.innerText = "Share!";
-	this.disabled = false;
+	mainelm = this;
+	mainelm.innerText = "loading...";
+	mainelm.disabled = true;
+	$.getJSON("http://slinkme.ml/api.php?url=" + encodeURIComponent(url), function(d) {
+		prompt("Copy this URL and share with your friends!", "http://koko.ga/"+d.alias);
+		mainelm.innerText = "Share!";
+		mainelm.disabled = false;
+	}).onerror = function() {
+		mainelm.disabled = false;
+		$("#share")[0].click();
+	}
+	
 }
 function saveslot(a) {
 	localStorage['save'+a] = location.hash;
