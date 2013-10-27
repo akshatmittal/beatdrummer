@@ -84,6 +84,8 @@ function shareit() {
 	mainelm.innerText = "loading...";
 	mainelm.disabled = true;
 	var url = "http://akshatmittal.github.io/beatdrummer/" + location.hash;
+	prompt("Copy this URL and share with your friends!", url);
+	/*
 	$.getJSON("http://slinkme.ml/api.php?url=" + encodeURIComponent(url), function(d) {
 		prompt("Copy this URL and share with your friends!", "http://koko.ga/"+d.alias);
 		mainelm.innerText = "Share!";
@@ -92,6 +94,9 @@ function shareit() {
 		mainelm.disabled = false;
 		$("#share")[0].click();
 	}
+	*/
+	mainelm.innerText = "Share!";
+	mainelm.disabled = false;
 }
 function saveslot(a) {
 	localStorage['save'+a] = location.hash;
