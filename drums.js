@@ -1,5 +1,4 @@
 window.onresize = cheResize;
-
 function cheResize() {
 	$("#screenwide")[0].innerText = window.innerWidth;
 	if((window.innerWidth < 1150)) {
@@ -14,7 +13,6 @@ function cheResize() {
 	}
 }
 cheResize();
-
 var isPlaying = !1;
 var curBeat = 0;
 var curSpeed = 120;
@@ -133,7 +131,6 @@ function loaddemo(a) {
 $(document).ready(function(){
 	$("audio").each(function(i){
 		var self = this;
-		// this, coz typing them all is real stress.
 		var $ul = $('<ul id="control_' + this.id + '" class="soundrow">');
 		$ul.append('<li class="header">' + this.title + '</li>');
 		for (j = 0; j < 16; j++) {
@@ -150,7 +147,7 @@ $(document).ready(function(){
 			curBeat = 0;
 			isPlaying = setInterval(playNextBeat, 60000 / curSpeed / 4);
 			this.innerHTML = "Stop!";
-			document.title = "♫ " + initTitle;
+			document.title = "♪ " + initTitle;
 		} else {
 			clearInterval(isPlaying);
 			isPlaying = false;
